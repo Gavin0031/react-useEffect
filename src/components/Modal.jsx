@@ -31,11 +31,11 @@ function Modal({ open, children }) {
     } else {
       dialog.current.close();
     }
-  }, [])
+  }, [open])
 
   return createPortal(
     <dialog className="modal" ref={dialog}>
-      {children}
+      {open? children : null}
     </dialog>,
     document.getElementById('modal')
   );
